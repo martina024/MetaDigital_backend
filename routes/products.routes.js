@@ -531,6 +531,9 @@ productsRouter.post("/post",async(req,res)=>{
 })
 
 
+
+
+
 productsRouter.patch("/update/:id",async(req,res)=>{
     const ID=req.params.id
     const payload=req.body
