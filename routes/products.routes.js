@@ -569,21 +569,21 @@ productsRouter.delete("/delete/:id",async(req,res)=>{
 })
 
 
-// cart
+cart
 
-// productsRouter.get("/cart",async(req,res)=>{
+productsRouter.get("/cart",async(req,res)=>{
    
-//     try {
-//         const product=await ProductModel.find({"quantity":{$gt:0}})
-//         console.log(product)
-//         res.send(product)
+    try {
+        const product=await ProductModel.find({"quantity":{$gt:0}})
+        console.log(product)
+        res.send(product)
     
-//     } 
-//     catch (err) {
-//         console.log(err)
-//         res.send({"message":"Something went wrong"})
-//     }
-// })
+    } 
+    catch (err) {
+        console.log(err)
+        res.send({"message":"Something went wrong"})
+    }
+})
 
 
 // USER PRODUCT ROUTE FOR QUANTITY
