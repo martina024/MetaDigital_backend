@@ -8,7 +8,7 @@ const authenticate=(req,res,next)=>{
     // console.log(url)
     // console.log(req.params)
     // console.log(token)
-    // if(req.url=="/products/post" || req.url==`/products/update/${url}` || req.url==`/products/delete/${url}`){
+    if(req.url=="/products/post" || req.url==`/products/update/${url}` || req.url==`/products/delete/${url}`){
         if(token){
             const decodedToken=jwt.verify(token,process.env.key)
             if(decodedToken){
@@ -21,26 +21,26 @@ const authenticate=(req,res,next)=>{
         else{
             res.send("please login first")
         }
-    // }
+    }
 
-    // else if(req.url===`/products/quantity/${url}`){
-        // if(token){
-        //     const decodedToken=jwt.verify(token,process.env.key)
-        //     if(decodedToken){
-        //         next()
-        //     }
-        //     else{
-        //         res.send("please login first")
-        //     }
-        // }
-        // else{
-        //     res.send("please login first")
-        // }
-    // }
+    else if(req.url===`/products/quantity/${url}`){
+        if(token){
+            const decodedToken=jwt.verify(token,process.env.key)
+            if(decodedToken){
+                next()
+            }
+            else{
+                res.send("please login first")
+            }
+        }
+        else{
+            res.send("please login first")
+        }
+    }
 
-    // else{
-    //     next()
-    // }
+    else{
+        next()
+    }
    
     
 }

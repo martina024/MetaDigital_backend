@@ -21,7 +21,7 @@ app.get("/",(req,res)=>{
 app.use("/", userRouter)
 
 
-app.use(authenticate)
+// app.use(authenticate)
 app.use("/products", productsRouter)
 
 
